@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    color: #000000;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+body {
+    background-color: #5a0019c7;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: black;
+      animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+h1 {
+    text-align: center;
+    margin-top: 3%;
+    font-size: 60;
+    font-family: "Noto Sans", sans-serif;
+    background-image: url(minimal-mountains-alps-landscape-4k-b0-2560x1080.jpg);
+    background-size: cover;
+    background-clip: text;
+    background-position: left;
+    color: transparent;
+    animation: animate 30s linear infinite;
+}
+@keyframes animate {
+    to {
+        background-position: -600px;
+    }
+    
+}
+
+/* ===== أشكال خلفية ===== */
+body::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff6f61, transparent);
+    top: 60px;
+    left: 40px;
+    opacity: 0.2;
+    z-index: -1;
+    color: #000000;
+    animation: moveCircle 10s linear infinite alternate;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #00c2cb, transparent);
+    bottom: 100px;
+    right: 80px;
+    opacity: 0.2;
+    z-index: -1;
+    animation: moveCircle 12s linear infinite alternate;
+}
+
+.circle-extra1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #f1c40f, transparent);
+    top: 30%;
+    left: 20%;
+    opacity: 0.15;
+    z-index: -1;
+    animation: moveCircle 14s ease-in-out infinite alternate;
+}
+
+.circle-extra2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #9b59b6, transparent);
+    bottom: 20%;
+    left: 10%;
+    opacity: 0.15;
+    z-index: -1;
+    animation: moveCircle 16s ease-in-out infinite alternate;
+}
+
+.circle-extra3 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #3498db, transparent);
+    top: 70%;
+    right: 25%;
+    opacity: 0.15;
+    z-index: -1;
+    animation: moveCircle 18s ease-in-out infinite alternate;
+}
+
+@keyframes moveCircle {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(-40px) rotate(45deg); }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-top: 8%; /* تم تعديله للنزول */
+    background-color: #000000;
+    border-radius: 20px;
+   color: #000000;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== NAV ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    flex-wrap: wrap;
+    animation: floatNav 3s ease-in-out infinite;
+    border: #000000;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #CF0F47, transparent);
+    animation: lineMove 3s linear infinite;
+}
+
+@keyframes lineMove {
+    from { background-position: 0%; }
+    to { background-position: 200%; }
+}
+
+nav .logo {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    padding-left: 0;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 16px;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.content .text {
+    color: #fff;
+    flex: 1;
+    min-width: 280px;
+}
+
+.content .text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.content .image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    animation: floatImg 4s ease-in-out infinite;
+}
+
+@keyframes floatImg {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+.content .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border-bottom: 2px solid #CF0F47;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #FFDEDE;
+
+    color: #000000;
+    transition: 0.5s;
+}
+
+/* ===== FOOTER TEXT ===== */
+p {
+    text-align: center;
+    color: white;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .content .text h2 {
+        font-size: 26px;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatNav {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
